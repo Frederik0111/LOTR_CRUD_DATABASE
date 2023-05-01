@@ -1,0 +1,241 @@
+/* ---------- root variables ---------- */
+:root {
+    --green: rgb(20, 50, 43);
+    --light-green: rgb(75, 107, 86);
+    --text-color-gold: gold;
+    --light-pink-red: #c7b8ba;
+}
+
+/* ---------- general styling ---------- */
+@font-face {
+    font-family: "Bilbo_Regular";
+    src: url(Bilbo_Regular.ttf);
+}
+
+html {
+    color: var(--text-color-gold);
+    font-family: "Bilbo_Regular";
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: 500;
+    letter-spacing: 0.1px;
+    text-align: center;
+}
+
+h3 {
+    font-weight: 500;
+    letter-spacing: 0.1px;
+}
+
+a {
+    cursor: pointer;
+    color: var(--green);
+}
+
+img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 3;
+}
+
+figcaption {
+    font-size: 2em;
+    text-align: center;
+}
+
+li {
+    font-size: 1.4em;
+}
+
+/* ---------- header styling ---------- */
+header {
+    background-color: var(--green);
+    color: var(--text-color-gold);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+/* ---------- footer styling ---------- */
+footer {
+    background-color: var(--green);
+    color: var(--text-color-gold);
+    padding: 1em;
+    text-align: center;
+}
+
+/* ---------- main page styling ---------- */
+main {
+    background: var(--light-green);
+    animation: fadeIn 0.4s;
+    padding: 137px 0 0;
+}
+
+/* ---------- animations ---------- */
+/* fade in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* ---------- grid container styling ---------- */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+    padding: 1em;
+}
+
+@media (min-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 992px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media (min-width: 1200px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+@media (min-width: 1500px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+}
+
+/* ---------- grid item styling ---------- */
+.grid-item {
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
+    padding: 1.5em;
+    background-color: var(--light-pink-red);
+    transition: 0.5s;
+    animation: fadeIn 0.5s;
+    cursor: pointer;
+}
+
+.grid-item:hover {
+    box-shadow: 0 8px 16px 0 var(--green);
+}
+
+.grid-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.grid-item p {
+    margin: 0.3em 0;
+}
+
+.spoiler {
+    color: black;
+    background-color: black;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.spoiler:hover, .spoiler:focus {
+    color: white;
+}
+
+/* ---------- buttons in grid container ---------- */
+.grid-container .btns {
+    padding: 1em 0 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+}
+
+.grid-container .btns button {
+    width: 100%;
+}
+
+/* ---------- form styling ---------- */
+/* input form styling */
+form {
+    margin: 2em auto 0;
+    background-color: var(--light-green);
+    padding: 1em 1em 2em;
+    text-align: center;
+}
+
+button {
+    font-weight: 300;
+    font-size: 1em;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 0;
+    color: var(--text-color-gold);
+    background-color: var(--green);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.5em 1em;
+    width: 100%;
+    max-width: 380px;
+}
+
+input {
+    margin: 1em auto;
+    width: 100%;
+    max-width: 350px;
+    padding: 1em;
+    border: 2px solid var(--green);
+    display: block;
+    background: var(--light-pink-red);
+}
+
+/* ---------- dialog styling ---------- */
+dialog {
+    border-color: var(--green);
+    background-color: var(--light-green);
+    color: var(--text-color-gold);
+    width: 50vw;
+    padding: 2em 1em;
+}
+
+dialog::backdrop {
+    background: rgba(172, 201, 183, 0.582);
+}
+
+.dialog-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+dialog h4 {
+    margin-bottom: 0;
+    font-size: 2em;
+}
+dialog ul {
+    margin: 0.5em 0 1em;
+    padding-inline-start: 1.5em;
+    font-size: 1.2em;
+}
+dialog p {
+    margin: 0.5em 0 1em;
+    font-size: 1.7em;
+}

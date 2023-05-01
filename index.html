@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="app.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <title>LoTR Database</title>
+</head>
+
+<body>
+    <header>
+        <h1>Lord of The Rings Character Movie Database - CRUD</h1>
+    </header>
+    <main>
+        <section id="characters" class="grid-container"></section>
+    </main>
+
+    <dialog id="dialog-character">
+        <section class="dialog-grid">
+            <figure><img id="dialog-image" src="./images/Aragorn.png" alt=""></figure>
+            <article>
+                <h3 id="dialog-fellow-ship"></h3>
+                <p id="dialog-character-description-fellowship"></p>
+                <section>
+                    <h4>Character Info:</h4>
+                    <ul>
+                        <li>Gender: <span id="dialog-gender"></span></li>
+                        <li>Age: <span id="dialog-age"></span></li>
+                        <li>Eye colour: <span id="dialog-eye-colour"></span></li>
+                        <li>Hair colour: <span id="dialog-hair-colour"></span></li>
+                        <li>Birthplace: <span id="dialog-birth-place"></span></li>
+                        <li>Species: <span id="dialog-species"></span></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h4>Actor:</h4>
+                        <p><span id="dialog-name"></span> is played by <span id="dialog-actor-name">actor name</span>.</p>
+                    <h4>Fate at the end of the third movie:</h4>
+                    <p id="dialog-character-description-alive" class="spoiler"></p>
+            </section>
+
+            </article>
+        </section>
+        <form method="dialog">
+            <button id="btn-cancel">Close</button>
+        </form>
+    </dialog>
+
+    <footer>
+        <p>Images on this site are not owned by the creator of this site</p>
+    </footer>
+    
+    <script src="app.js"></script>
+
+</body>
+</html>
