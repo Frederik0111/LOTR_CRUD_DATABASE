@@ -123,3 +123,106 @@ function generateAlive(character) {
     return `${character.name} is not alive at the end.`;
   }
 }
+
+document.querySelector("#btn-create").addEventListener("click", createCharacterDialog);
+
+function createCharacterDialog() {
+  document.querySelector("#create-dialog").showModal();
+
+  document.querySelector("#create-form").addEventListener("submit", saveCharacterData);
+}
+
+// create a new character
+async function createCharacter(name, gender, birthPlace, age, species, eyeColour, hairColour, actor, fellowship, alive, image){
+  const character = {
+    name: `${name}`,
+    gender: `${gender}`,
+    birthPlace: `${birthPlace}`,
+    age: `${age}`,
+    species: `${species}`,
+    eyeColour: `${eyeColour}`,
+    hairColour: `${hairColour}`,
+    actor: `${actor}`,
+    fellowship: `${fellowship}`,
+    alive: `${alive}`,
+    image: `${image}`,
+  };
+  // make javaScript object to Json object
+  const dataAsJson = JSON.stringify(character);
+  // fetch reguest to POST item
+  const response = await fetch(`${endpoint}/characters.json`, {
+    method: "POST",
+    body: dataAsJson,
+  });
+  if (response.ok) {
+    // response with new object id/athlete
+    const data = await response.json();
+    // make get request to input specific element into DOM from response id
+    insertNewItem(data.name, "character");
+    //show response message to user
+    response_message("Character created!");
+  } else if (!response.ok) {
+    // show error message and reload page
+    response_message("Error!");
+  }
+}
+
+function saveCharacterData(event) {
+  event.preventDefault();
+  const type = event.target.id;
+  // get character input values
+  const name = event.target.name.value;
+  const gender = event.target.gender.value;
+  const birthPlace = event.target.birthPlace.value;
+  const age = event.target.age.value;
+  const species = event.target.species.value;
+  const eyeColour = event.target.eyeColour.value;
+  const hairColour = event.target.hairColour.value;
+  const actor = event.target.actor.value;
+  const fellowship = event.target.fellowship.value;
+  const alive = event.target.alive.value;
+  const image = event.target.image.value;
+  
+  //check for html request and url
+  if (type === "update-form") {
+    const id = event.target.dataset.id;
+    //delete locally
+    document.querySelector(`#${id}`).remove();
+    // close dialog
+    document.querySelector("#update-dialog").close();
+    // reset form
+    document.querySelector("#update-form").reset();
+    updateMemberToDB(
+      name,
+      gender,
+      birthPlace,
+      age,
+      species,
+      eyeColour,
+      hairColour,
+      actor,
+      fellowship,
+      alive,
+      image,
+      id
+    );
+  } else if (type === "create-form") {
+    // close dialog
+    document.querySelector("#create-dialog").close();
+    // reset form
+    document.querySelector("#create-form").reset();
+    createMemberToDB(
+      name,
+      gender,
+      birthPlace,
+      age,
+      species,
+      eyeColour,
+      hairColour,
+      actor,
+      fellowship,
+      alive,
+      image
+    );
+  }
+}
