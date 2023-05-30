@@ -4,6 +4,7 @@
     --light-green: rgb(75, 107, 86);
     --text-color-gold: gold;
     --light-pink-red: #c7b8ba;
+    --red: rgb(154, 14, 42);
 }
 
 /* ---------- general styling ---------- */
@@ -60,7 +61,7 @@ li {
 header {
     background-color: var(--green);
     color: var(--text-color-gold);
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -196,6 +197,17 @@ button {
     padding: 0.5em 1em;
     width: 100%;
     max-width: 380px;
+}
+
+#btn-create {
+    background-color: var(--text-color-gold);
+    color: var(--green);
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.delete-button {
+    background-color: var(--red);
 }
 
 input {

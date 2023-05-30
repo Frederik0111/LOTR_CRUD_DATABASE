@@ -36,6 +36,12 @@ function initApp() {
         <button class="dialog-button" data-name="${
           character.name
         }">More Info</button>
+        <button class="update-button" data-name="${
+          character.name
+        }">Update</button>
+        <button class="delete-button" data-name="${
+          character.name
+        }">Delete</button>
       `;
       charactersContainer.appendChild(characterElement);
     });
