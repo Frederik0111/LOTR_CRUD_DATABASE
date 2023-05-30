@@ -3,30 +3,32 @@
 const endpoint =
   "https://crudlotr-default-rtdb.europe-west1.firebasedatabase.app/";
 
-window.addEventListener("load", getCharacters);
+window.addEventListener("load", fetchCharacterData);
 
-async function getCharacters() {
-  try {
-    const res = await fetch(`${endpoint}/characters.json`);
-    const data = await res.json();
-    const characters = prepareCharacterData(data);
-    console.log(characters);
-    showCharacters(characters);
-  } catch (error) {
-    console.error(error);
-  }
-}
+// window.addEventListener("load", getCharacters);
 
-function prepareCharacterData(dataObject) {
-  const postArray = [];
-  for (const key in dataObject) {
-    const post = dataObject[key];
-    console.log(post);
-    postArray.push(post);
-  }
-  console.log(postArray);
-  return postArray;
-}
+// async function getCharacters() {
+//   try {
+//     const res = await fetch(`${endpoint}/characters.json`);
+//     const data = await res.json();
+//     const characters = prepareCharacterData(data);
+//     console.log(characters);
+//     showCharacters(characters);
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
+
+// function prepareCharacterData(dataObject) {
+//   const postArray = [];
+//   for (const key in dataObject) {
+//     const post = dataObject[key];
+//     console.log(post);
+//     postArray.push(post);
+//   }
+//   console.log(postArray);
+//   return postArray;
+// }
 
 async function fetchCharacterData() {
   try {
@@ -42,6 +44,9 @@ async function fetchCharacterData() {
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
+document.addEventListener("load", initApp);
+
 
 async function initApp() {
   try {
@@ -61,23 +66,24 @@ function showCharacters(characters) {
   characters.forEach((character) => {
     const characterElement = document.createElement("article");
     characterElement.innerHTML = `
-      <figure>
-        <img src="${character.image}" alt="${character.name}">
-        <figcaption>${character.name}</figcaption>
-      </figure>
-      <ul>
-        <li><strong>Gender:</strong> ${character.gender}</li>
-        <li><strong>Age:</strong> ${character.age}</li>
-        <li><strong>Eye colour:</strong> ${character.eyeColour}</li>
-        <li><strong>Hair colour:</strong> ${character.hairColour}</li>
-        <li><strong>Birthplace:</strong> ${character.birthPlace}</li>
-        <li><strong>Species:</strong> ${character.species}</li>
-      </ul>
-      <button class="dialog-button" data-name="${character.name}">More Info</button>
+        <figure>
+          <img src="${character.image}" alt="${character.name}">
+          <figcaption>${character.name}</figcaption>
+        </figure>
+        <ul>
+          <li><strong>Gender:</strong> ${character.gender}</li>
+          <li><strong>Age:</strong> ${character.age}</li>
+          <li><strong>Eye colour:</strong> ${character.eyeColour}</li>
+          <li><strong>Hair colour:</strong> ${character.hairColour}</li>
+          <li><strong>Birthplace:</strong> ${character.birthPlace}</li>
+          <li><strong>Species:</strong> ${character.species}</li>
+        </ul>
+        <button class="dialog-button" data-name="${character.name}">More Info</button>
     `;
     charactersContainer.appendChild(characterElement);
   });
 }
+
 
 function characterClicked(event) {
   const characterName = event.target.dataset.name;

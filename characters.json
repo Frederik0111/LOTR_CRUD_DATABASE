@@ -1,6 +1,6 @@
 {
     "characters": {        
-        "1": {  
+        "0": {  
             "name": "Aragorn",
             "gender": "male",
             "birthPlace": "Eriador",
@@ -13,7 +13,7 @@
             "alive": "true",
             "image": "./images/Aragorn.png"
     },
-        "2": {
+        "1": {
             "name": "Boromir",
             "gender": "male",
             "birthPlace": "Gondor",
@@ -26,7 +26,7 @@
             "alive": "false",
             "image": "./images/Boromir.png"    
     },
-        "3": {
+        "2": {
             "name": "Faramir",
             "gender": "male",
             "birthPlace": "Gondor",
@@ -39,7 +39,7 @@
             "alive": "true",
             "image": "./images/Faramir.png"
     },
-        "4": {
+        "3": {
             "name": "Frodo Baggins",
             "gender": "male",
             "birthPlace": "The Shire",
@@ -52,7 +52,7 @@
             "alive": "true",
             "image": "./images/Frodo.png"
     },
-        "5": {
+        "4": {
             "name": "Gandalf the Grey",
             "gender": "male",
             "birthPlace": "Valinor",
@@ -65,7 +65,7 @@
             "alive": "false",
             "image": "./images/Gandalf.png"
     },
-        "6": {
+        "5": {
             "name": "Gimli",
             "gender": "male",
             "birthPlace": "Blue Mountains",
@@ -78,7 +78,7 @@
             "alive": "true",
             "image": "./images/Gimli.png"
     },
-        "7": {
+        "6": {
             "name": "Legolas Greenleaf",
             "gender": "male",
             "birthPlace": "Mirkwood",
@@ -91,7 +91,7 @@
             "alive": "true",
             "image": "./images/Legolas.png"
     },
-        "8": {
+        "7": {
             "name": "Meriadoc Brandybuck",
             "gender": "male",
             "birthPlace": "The Shire",
@@ -104,7 +104,7 @@
             "alive": "true",
             "image": "./images/Merry.png"
     },
-        "9": {
+        "8": {
             "name": "Peregrin Took",
             "gender": "male",
             "birthPlace": "The Shire",
@@ -117,7 +117,7 @@
             "alive": "true",
             "image": "./images/Pippin.png"
     },
-        "10": {
+        "9": {
             "name": "Samwise Gamgee",
             "gender": "male",
             "birthPlace": "The Shire",
@@ -130,7 +130,7 @@
             "alive": "true",
             "image": "./images/Sam.png"
     },
-        "11": {
+        "10": {
             "name": "Saruman",
             "gender": "male",
             "birthPlace": "unknown",
@@ -143,7 +143,7 @@
             "alive": "false",
             "image": "./images/Saruman.png"
     },
-        "12": {
+        "11": {
             "name": "Sauron",
             "gender": "male",
             "birthPlace": "unknown",
