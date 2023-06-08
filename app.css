@@ -57,6 +57,10 @@ li {
     font-size: 1.4em;
 }
 
+legend {
+    font-size: xx-large;
+}
+
 /* ---------- header styling ---------- */
 header {
     background-color: var(--green);
