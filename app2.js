@@ -131,7 +131,7 @@ function createCharacterDialog() {
 
   document
     .querySelector("#create-character-btn")
-    .addEventListener("submit", saveCharacterData);
+    .addEventListener("submit", createCharacter);
 }
 
 // create a new character
@@ -169,62 +169,62 @@ async function createCharacter(name, gender, birthPlace, age, species, eyeColour
   }
 }
 
-function saveCharacterData(event) {
-  event.preventDefault();
-  const type = event.target.id;
-  // get character input values
-  const name = event.target.name.value;
-  const gender = event.target.gender.value;
-  const birthPlace = event.target.birthPlace.value;
-  const age = event.target.age.value;
-  const species = event.target.species.value;
-  const eyeColour = event.target.eyeColour.value;
-  const hairColour = event.target.hairColour.value;
-  const actor = event.target.actor.value;
-  const fellowship = event.target.fellowship.value;
-  const alive = event.target.alive.value;
-  const image = event.target.image.value;
+// function saveCharacterData(event) {
+//   event.preventDefault();
+//   const type = event.target.id;
+//   // get character input values
+//   const name = event.target.name.value;
+//   const gender = event.target.gender.value;
+//   const birthPlace = event.target.birthPlace.value;
+//   const age = event.target.age.value;
+//   const species = event.target.species.value;
+//   const eyeColour = event.target.eyeColour.value;
+//   const hairColour = event.target.hairColour.value;
+//   const actor = event.target.actor.value;
+//   const fellowship = event.target.fellowship.value;
+//   const alive = event.target.alive.value;
+//   const image = event.target.image.value;
   
-  //check for html request and url
-  if (type === "update-form") {
-    const id = event.target.dataset.id;
-    //delete locally
-    document.querySelector(`#${id}`).remove();
-    // close dialog
-    document.querySelector("#update-dialog").close();
-    // reset form
-    document.querySelector("#update-form").reset();
-    updateMemberToDB(
-      name,
-      gender,
-      birthPlace,
-      age,
-      species,
-      eyeColour,
-      hairColour,
-      actor,
-      fellowship,
-      alive,
-      image,
-      id
-    );
-  } else if (type === "create-form") {
-    // close dialog
-    document.querySelector("#create-dialog").close();
-    // reset form
-    document.querySelector("#create-form").reset();
-    createMemberToDB(
-      name,
-      gender,
-      birthPlace,
-      age,
-      species,
-      eyeColour,
-      hairColour,
-      actor,
-      fellowship,
-      alive,
-      image
-    );
-  }
-}
+//   //check for html request and url
+//   if (type === "update-form") {
+//     const id = event.target.dataset.id;
+//     //delete locally
+//     document.querySelector(`#${id}`).remove();
+//     // close dialog
+//     document.querySelector("#update-dialog").close();
+//     // reset form
+//     document.querySelector("#update-form").reset();
+//     updateMemberToDB(
+//       name,
+//       gender,
+//       birthPlace,
+//       age,
+//       species,
+//       eyeColour,
+//       hairColour,
+//       actor,
+//       fellowship,
+//       alive,
+//       image,
+//       id
+//     );
+//   } else if (type === "create-form") {
+//     // close dialog
+//     document.querySelector("#create-dialog").close();
+//     // reset form
+//     document.querySelector("#create-form").reset();
+//     createMemberToDB(
+//       name,
+//       gender,
+//       birthPlace,
+//       age,
+//       species,
+//       eyeColour,
+//       hairColour,
+//       actor,
+//       fellowship,
+//       alive,
+//       image
+//     );
+//   }
+// }
