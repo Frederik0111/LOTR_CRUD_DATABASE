@@ -129,7 +129,9 @@ document.querySelector("#btn-create").addEventListener("click", createCharacterD
 function createCharacterDialog() {
   document.querySelector("#create-dialog").showModal();
 
-  document.querySelector("#create-form").addEventListener("submit", saveCharacterData);
+  document
+    .querySelector("#create-character-btn")
+    .addEventListener("submit", saveCharacterData);
 }
 
 // create a new character
